@@ -20,9 +20,7 @@ def link_records(anon_df, aux_df):
     """
     merged_data = anon_df.merge(aux_df, on=["age", "zip3", "gender"])
 
-    merged_data = merged_data[["anon_id", "name"]].rename(columns={"name": "matched_name"})
-
-    return merged_data.drop_duplicates(subset="anon_id")
+    return merged_data[["anon_id", "name"]].rename(columns={"name": "matched_name"})
     
     raise NotImplementedError
 
